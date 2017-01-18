@@ -1,5 +1,27 @@
 # Changes
 
+## Forked and changed
+ 
+**Issue:**
+
+
+Android crashes when trying to select an option with searchable=false property.
+Selecting an item triggers handleInputFocus with Select-input as target.
+
+https://github.com/JedWatson/react-select/issues/1036
+
+**Fixes applied:**
+
+line 1097 
+```
+this.renderInput(valueArray)
+```
+replaced with 
+```
+this.props.searchable ? this.renderInput(valueArray) : null
+```
+
+
 ## Breaking Changes
 
 Major API changes to Component props, SingleValue and Value have been merged
