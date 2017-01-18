@@ -860,7 +860,8 @@ const Select = React.createClass({
 		if (this.props.disabled || !this.props.searchable) {
 			const { inputClassName, ...divProps } = this.props.inputProps;
 			return (
-				<div
+				<input
+					type="text"
 					{...divProps}
 					role="combobox"
 					aria-expanded={isOpen}
@@ -872,7 +873,7 @@ const Select = React.createClass({
 					onFocus={this.handleInputFocus}
 					ref={ref => this.input = ref}
 					aria-readonly={'' + !!this.props.disabled}
-					style={{ border: 0, width: 1, display:'inline-block' }}/>
+					style={{ border: 0, width: 1, display:'inline-block', color: 'transparent' }}/>
 			);
 		}
 
@@ -1094,7 +1095,7 @@ const Select = React.createClass({
 				>
 					<span className="Select-multi-value-wrapper" id={this._instancePrefix + '-value'}>
 						{this.renderValue(valueArray, isOpen)}
-						{this.props.searchable ? this.renderInput(valueArray, focusedOptionIndex) : null}
+						{this.renderInput(valueArray, focusedOptionIndex)}
 					</span>
 					{removeMessage}
 					{this.renderLoading()}

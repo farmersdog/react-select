@@ -61,6 +61,7 @@ _reactDom2['default'].render(_react2['default'].createElement(
 	'div',
 	null,
 	_react2['default'].createElement(_componentsStates2['default'], { label: 'States', searchable: true }),
+	_react2['default'].createElement(_componentsStates2['default'], { label: 'States', searchable: true }),
 	_react2['default'].createElement(_componentsMultiselect2['default'], { label: 'Multiselect' }),
 	_react2['default'].createElement(_componentsVirtualized2['default'], { label: 'Virtualized' }),
 	_react2['default'].createElement(_componentsContributors2['default'], { label: 'Contributors (Async)' }),

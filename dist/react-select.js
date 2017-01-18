@@ -1701,7 +1701,9 @@ var Select = _react2['default'].createClass({
 
 			var divProps = _objectWithoutProperties(_props$inputProps, ['inputClassName']);
 
-			return _react2['default'].createElement('div', _extends({}, divProps, {
+			return _react2['default'].createElement('input', _extends({
+				type: 'text'
+			}, divProps, {
 				role: 'combobox',
 				'aria-expanded': isOpen,
 				'aria-owns': isOpen ? this._instancePrefix + '-list' : this._instancePrefix + '-value',
@@ -1714,7 +1716,7 @@ var Select = _react2['default'].createClass({
 					return _this5.input = ref;
 				},
 				'aria-readonly': '' + !!this.props.disabled,
-				style: { border: 0, width: 1, display: 'inline-block' } }));
+				style: { border: 0, width: 1, display: 'inline-block', color: 'transparent' } }));
 		}
 
 		if (this.props.autosize) {
@@ -1944,7 +1946,7 @@ var Select = _react2['default'].createClass({
 					'span',
 					{ className: 'Select-multi-value-wrapper', id: this._instancePrefix + '-value' },
 					this.renderValue(valueArray, isOpen),
-					this.props.searchable ? this.renderInput(valueArray, focusedOptionIndex) : null
+					this.renderInput(valueArray, focusedOptionIndex)
 				),
 				removeMessage,
 				this.renderLoading(),
