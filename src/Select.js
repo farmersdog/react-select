@@ -861,16 +861,14 @@ const Select = React.createClass({
 			const { inputClassName, ...divProps } = this.props.inputProps;
 			return (
 				<input
-					type="text"
+					type="button"
 					{...divProps}
-					role="combobox"
 					aria-expanded={isOpen}
 					aria-owns={isOpen ? this._instancePrefix + '-list' : this._instancePrefix + '-value'}
 					aria-activedescendant={isOpen ? this._instancePrefix + '-option-' + focusedOptionIndex : this._instancePrefix + '-value'}
 					className={className}
-					tabIndex={this.props.tabIndex || 0}
 					onBlur={this.handleInputBlur}
-					onFocus={this.handleInputFocus}
+					onFocus={this.handleInputBlur}
 					ref={ref => this.input = ref}
 					aria-readonly={'' + !!this.props.disabled}
 					style={{ border: 0, width: 1, display:'inline-block', color: 'transparent' }}/>
